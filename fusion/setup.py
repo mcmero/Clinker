@@ -172,4 +172,8 @@ def superTranscriptIndex(st_file):
             sequence_line = general.stripStringChars(line, ["\n", " "])
             sequence.append(sequence_line)
 
+    # ensure last processed ST is assigned its properties
+    full_sequence = "".join(sequence)
+    st_genes[gene_name] = (full_sequence, exon_coordinates, exon_names)
+
     return st_genes
